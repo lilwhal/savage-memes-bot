@@ -188,11 +188,14 @@ def post_to_facebook(file_path: str, caption: str) -> bool:
 
 def post_to_threads(file_path: str, caption: str) -> bool:
     try:
-        user_token = _get_env("META_ACCESS_TOKEN")
+        # Use dedicated Threads token
+        threads_token = _get_env("THREADS_ACCESS_TOKEN")
         threads_id = _get_env("THREADS_ACCOUNT_ID")
         is_video = file_path.endswith(".mp4")
 
         if is_video:
+            # For videos use Facebook page to get public URL
+            user_token = _get_env("META_ACCESS_TOKEN")
             page_id = _get_env("FACEBOOK_PAGE_ID")
             page_token = get_page_token(user_token, page_id)
 
@@ -226,7 +229,7 @@ def post_to_threads(file_path: str, caption: str) -> bool:
                     "media_type": "VIDEO",
                     "video_url": video_url,
                     "text": caption,
-                    "access_token": user_token,
+                    "access_token": threads_token,
                 }
             )
         else:
@@ -240,7 +243,7 @@ def post_to_threads(file_path: str, caption: str) -> bool:
                     "media_type": "IMAGE",
                     "image_url": image_url,
                     "text": caption,
-                    "access_token": user_token,
+                    "access_token": threads_token,
                 }
             )
 
@@ -254,7 +257,7 @@ def post_to_threads(file_path: str, caption: str) -> bool:
 
         pub = requests.post(
             f"{GRAPH_URL}/{threads_id}/threads_publish",
-            data={"creation_id": container_id, "access_token": user_token},
+            data={"creation_id": container_id, "access_token": threads_token},
         )
         pub_data = pub.json()
         if pub.status_code != 200:
