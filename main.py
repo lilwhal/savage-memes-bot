@@ -45,11 +45,12 @@ def run():
         sys.exit(0)
 
     sections = config.get("sections", ["funny"])
-    posts_per_run = config.get("posts_per_run", 3)
+    posts_per_run = config.get("posts_per_run", 1)
     platforms = config.get("platforms", ["instagram", "facebook", "threads"])
 
     print(f"[Bot] Sections: {sections} | Posts: {posts_per_run} | Platforms: {platforms}")
 
+    # 1. Fetch posts from all configured sections
     all_posts = []
     for section in sections:
         print(f"[Bot] Fetching section: {section}")
@@ -57,21 +58,30 @@ def run():
         all_posts.extend(posts)
         time.sleep(2)
 
+    # Sort by type (videos first) then upvotes
     all_posts.sort(key=lambda x: (x["type"] == "Animated", x["upvotes"]), reverse=True)
 
+    # 2. Filter hate speech / blacklisted content
     print(f"[Bot] {len(all_posts)} posts fetched, filtering...")
     safe_posts = filter_posts(all_posts, config)
     print(f"[Bot] {len(safe_posts)} posts passed content filter")
 
-    new_posts = [p for p in new_posts if p["upvotes"] >= config.get("min_upvotes", 1000)]
-    print(f"[Bot] {len(new_posts)} new posts available")
+    # 3. Remove already-posted
+    new_posts = filter_unposted(safe_posts)
+
+    # 4. Filter by minimum upvotes
+    min_upvotes = config.get("min_upvotes", 1000)
+    new_posts = [p for p in new_posts if p["upvotes"] >= min_upvotes]
+    print(f"[Bot] {len(new_posts)} new posts available above {min_upvotes} upvotes")
 
     if not new_posts:
         print("[Bot] No new posts to share today. Exiting.")
         sys.exit(0)
 
+    # 5. Take top N posts for this run
     to_post = new_posts[:posts_per_run]
 
+    # 6. Download, post, cleanup
     posted_count = 0
     for post in to_post:
         print(f"\n[Bot] Processing: {post['title'][:60]} (👍 {post['upvotes']})")
