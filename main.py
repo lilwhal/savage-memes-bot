@@ -21,8 +21,10 @@ def load_config() -> dict:
 
 
 def build_caption(post: dict, config: dict) -> str:
+    title = post.get("title", "")
     tags = config.get("caption_hashtags", ["#meme", "#funny", "#savagmemes"])
-    return " ".join(tags)
+    hashtags = " ".join(tags)
+    return f"{title}\n\n{hashtags}" if title else hashtags
 
 
 def cleanup_file(path: str):
