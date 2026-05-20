@@ -1,1 +1,43 @@
 
+name: Savage Memes Bot
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  post-memes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Refresh token (every run)
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python refresh_token.py
+      - name: Run bot
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          THREADS_ACCOUNT_ID: ${{ secrets.THREADS_ACCOUNT_ID }}
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
+        run: python main.py
+      - run: |
+          git config user.name "savage-memes-bot"
+          git config user.email "bot@savagmemes.com"
+          git add posted_log.json
+          git diff --staged --quiet || git commit -m "📝 Update post log [skip ci]"
+          git push
