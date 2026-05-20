@@ -1,0 +1,31 @@
+{
+  "bot_enabled": true,
+
+  "sections": ["funny", "meme"],
+
+  "posts_per_run": 1,
+
+  "platforms": {
+    "instagram": true,
+    "facebook": true,
+    "threads": true
+  },
+
+  "caption_hashtags": [
+    "#meme",
+    "#funny",
+    "#savagmemes",
+    "#dankmemes",
+    "#humor",
+    "#lol",
+    "#comedy",
+    "#memesdaily"
+  ],
+
+  "blacklist_keywords": [
+    "Add your own",
+    "banned words here"
+  ],
+
+  "min_upvotes": 1000
+}
