@@ -58,18 +58,23 @@ def run():
         all_posts.extend(posts)
         time.sleep(2)
 
-    # Sort by type (videos first) then upvotes
+    # 2. Deduplicate posts that appear in multiple sections
+    seen = set()
+    all_posts = [p for p in all_posts if not (p["id"] in seen or seen.add(p["id"]))]
+    print(f"[Bot] {len(all_posts)} unique posts after deduplication")
+
+    # 3. Sort by type (videos first) then upvotes
     all_posts.sort(key=lambda x: (x["type"] == "Animated", x["upvotes"]), reverse=True)
 
-    # 2. Filter hate speech / blacklisted content
-    print(f"[Bot] {len(all_posts)} posts fetched, filtering...")
+    # 4. Filter hate speech / blacklisted content
+    print(f"[Bot] Filtering content...")
     safe_posts = filter_posts(all_posts, config)
     print(f"[Bot] {len(safe_posts)} posts passed content filter")
 
-    # 3. Remove already-posted
+    # 5. Remove already-posted
     new_posts = filter_unposted(safe_posts)
 
-    # 4. Filter by minimum upvotes
+    # 6. Filter by minimum upvotes
     min_upvotes = config.get("min_upvotes", 1000)
     new_posts = [p for p in new_posts if p["upvotes"] >= min_upvotes]
     print(f"[Bot] {len(new_posts)} new posts available above {min_upvotes} upvotes")
@@ -78,10 +83,10 @@ def run():
         print("[Bot] No new posts to share today. Exiting.")
         sys.exit(0)
 
-    # 5. Take top N posts for this run
+    # 7. Take top N posts for this run
     to_post = new_posts[:posts_per_run]
 
-    # 6. Download, post, cleanup
+    # 8. Download, post, cleanup
     posted_count = 0
     for post in to_post:
         print(f"\n[Bot] Processing: {post['title'][:60]} (👍 {post['upvotes']})")
