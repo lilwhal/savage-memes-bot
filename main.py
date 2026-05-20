@@ -63,7 +63,7 @@ def run():
     safe_posts = filter_posts(all_posts, config)
     print(f"[Bot] {len(safe_posts)} posts passed content filter")
 
-    new_posts = filter_unposted(safe_posts)
+    new_posts = [p for p in new_posts if p["upvotes"] >= config.get("min_upvotes", 1000)]
     print(f"[Bot] {len(new_posts)} new posts available")
 
     if not new_posts:
