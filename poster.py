@@ -32,18 +32,13 @@ def get_page_token(user_token: str, page_id: str) -> str:
 
 
 def upload_to_imgbb(file_path: str) -> str | None:
-    """Upload image to imgbb and return public URL."""
     try:
         api_key = _get_env("IMGBB_API_KEY")
         with open(file_path, "rb") as f:
             img_data = base64.b64encode(f.read()).decode("utf-8")
         resp = requests.post(
             "https://api.imgbb.com/1/upload",
-            data={
-                "key": api_key,
-                "image": img_data,
-                "expiration": 600  # auto-delete after 10 mins
-            }
+            data={"key": api_key, "image": img_data, "expiration": 600}
         )
         resp.raise_for_status()
         url = resp.json()["data"]["url"]
@@ -63,7 +58,6 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
         is_video = file_path.endswith(".mp4")
 
         if is_video:
-            # Upload video to Facebook as unpublished to get public URL
             page_id = _get_env("FACEBOOK_PAGE_ID")
             page_token = get_page_token(user_token, page_id)
 
@@ -76,7 +70,6 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
             upload.raise_for_status()
             fb_video_id = upload.json().get("id")
 
-            # Poll until video is ready
             video_url = None
             for _ in range(10):
                 time.sleep(5)
@@ -102,7 +95,6 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
                 }
             )
         else:
-            # Upload image to imgbb for public URL
             image_url = upload_to_imgbb(file_path)
             if not image_url:
                 return False
@@ -116,11 +108,14 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
                 }
             )
 
-        resp.raise_for_status()
-        container_id = resp.json()["id"]
+        data = resp.json()
+        if resp.status_code != 200:
+            print(f"[Poster] Instagram API error: {data}")
+            return False
+
+        container_id = data["id"]
         print(f"[Poster] Instagram container created: {container_id}")
 
-        # Wait for container to be ready
         for _ in range(15):
             status = requests.get(
                 f"{GRAPH_URL}/{container_id}",
@@ -135,13 +130,16 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
                 return False
             time.sleep(6)
 
-        # Publish
         pub = requests.post(
             f"{GRAPH_URL}/{ig_id}/media_publish",
             data={"creation_id": container_id, "access_token": user_token},
         )
-        pub.raise_for_status()
-        print(f"[Poster] Instagram posted: {pub.json().get('id')}")
+        pub_data = pub.json()
+        if pub.status_code != 200:
+            print(f"[Poster] Instagram publish error: {pub_data}")
+            return False
+
+        print(f"[Poster] Instagram posted: {pub_data.get('id')}")
         return True
 
     except Exception as e:
@@ -173,8 +171,12 @@ def post_to_facebook(file_path: str, caption: str) -> bool:
                     files={"source": f},
                 )
 
-        resp.raise_for_status()
-        print(f"[Poster] Facebook posted: {resp.json().get('id')}")
+        data = resp.json()
+        if resp.status_code != 200:
+            print(f"[Poster] Facebook API error: {data}")
+            return False
+
+        print(f"[Poster] Facebook posted: {data.get('id')}")
         return True
 
     except Exception as e:
@@ -191,7 +193,6 @@ def post_to_threads(file_path: str, caption: str) -> bool:
         is_video = file_path.endswith(".mp4")
 
         if is_video:
-            # Use Facebook video URL for threads too
             page_id = _get_env("FACEBOOK_PAGE_ID")
             page_token = get_page_token(user_token, page_id)
 
@@ -243,16 +244,24 @@ def post_to_threads(file_path: str, caption: str) -> bool:
                 }
             )
 
-        resp.raise_for_status()
-        container_id = resp.json()["id"]
+        data = resp.json()
+        if resp.status_code != 200:
+            print(f"[Poster] Threads API error: {data}")
+            return False
+
+        container_id = data["id"]
         time.sleep(5)
 
         pub = requests.post(
             f"{GRAPH_URL}/{threads_id}/threads_publish",
             data={"creation_id": container_id, "access_token": user_token},
         )
-        pub.raise_for_status()
-        print(f"[Poster] Threads posted: {pub.json().get('id')}")
+        pub_data = pub.json()
+        if pub.status_code != 200:
+            print(f"[Poster] Threads publish error: {pub_data}")
+            return False
+
+        print(f"[Poster] Threads posted: {pub_data.get('id')}")
         return True
 
     except Exception as e:
