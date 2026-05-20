@@ -3,9 +3,7 @@ name: Savage Memes Bot
 
 on:
   schedule:
-    - cron: "0 8 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 jobs:
