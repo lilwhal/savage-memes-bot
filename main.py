@@ -55,7 +55,7 @@ def run():
         all_posts.extend(posts)
         time.sleep(2)
 
-    all_posts.sort(key=lambda x: x["upvotes"], reverse=True)
+    all_posts.sort(key=lambda x: (x["type"] == "Animated", x["upvotes"]), reverse=True)
 
     print(f"[Bot] {len(all_posts)} posts fetched, filtering...")
     safe_posts = filter_posts(all_posts, config)
