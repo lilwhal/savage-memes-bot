@@ -2,7 +2,8 @@ name: Savage Memes Bot
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "0 */2 * * *"   # Every 2 hours - regular posts
+    - cron: "0 */4 * * *"   # Every 4 hours - reels
   workflow_dispatch:
 
 jobs:
@@ -33,9 +34,15 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
         run: python main.py
+      - name: Run reels bot
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+        run: python reels.py
       - run: |
           git config user.name "savage-memes-bot"
           git config user.email "bot@savagmemes.com"
-          git add posted_log.json
-          git diff --staged --quiet || git commit -m "📝 Update post log [skip ci]"
+          git add posted_log.json reels_log.json
+          git diff --staged --quiet || git commit -m "📝 Update post logs [skip ci]"
           git push
