@@ -23,7 +23,7 @@
   ],
 
   "blacklist_keywords": [
-    "9gag", "9GAG", "gag",
+    "9gag", "9GAG",
     "blacktivities", "black culture", "ghetto",
     "nigger", "nigga", "negro", "colored",
     "chink", "spic", "kike", "gook", "wetback",
@@ -37,4 +37,3 @@
 
   "min_upvotes": 2000
 }
-
