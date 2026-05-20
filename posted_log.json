@@ -1,7 +1,8 @@
 {
   "posted_ids": [
     "aZZ603V",
-    "a0erpgZ"
+    "a0erpgZ",
+    "aryQVA7"
   ],
   "history": [
     {
@@ -15,6 +16,12 @@
       "title": "Worth a try",
       "platform": "facebook",
       "posted_at": "2026-05-20T16:17:04.037315"
+    },
+    {
+      "id": "aryQVA7",
+      "title": "No title",
+      "platform": "facebook",
+      "posted_at": "2026-05-20T16:23:58.366853"
     }
   ]
 }
