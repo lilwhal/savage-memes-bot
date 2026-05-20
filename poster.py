@@ -8,6 +8,7 @@ import time
 import base64
 
 GRAPH_URL = "https://graph.facebook.com/v19.0"
+CHUNK_SIZE = 1024 * 1024 * 5  # 5MB chunks
 
 
 def _get_env(key: str) -> str:
@@ -49,6 +50,75 @@ def upload_to_imgbb(file_path: str) -> str | None:
         return None
 
 
+def upload_video_chunked(file_path: str, page_id: str, page_token: str, published: bool = True, description: str = "") -> str | None:
+    """Upload video using Facebook's resumable chunked upload API."""
+    file_size = os.path.getsize(file_path)
+    print(f"[Poster] Uploading video ({file_size / 1024 / 1024:.1f}MB) in chunks...")
+
+    # Step 1: Start upload session
+    start_resp = requests.post(
+        f"https://graph.facebook.com/v19.0/{page_id}/videos",
+        data={
+            "upload_phase": "start",
+            "file_size": file_size,
+            "access_token": page_token,
+        }
+    )
+    start_data = start_resp.json()
+    if "upload_session_id" not in start_data:
+        print(f"[Poster] Failed to start upload session: {start_data}")
+        return None
+
+    session_id = start_data["upload_session_id"]
+    video_id = start_data["video_id"]
+    print(f"[Poster] Upload session started: {session_id}")
+
+    # Step 2: Upload chunks
+    offset = 0
+    with open(file_path, "rb") as f:
+        while offset < file_size:
+            chunk = f.read(CHUNK_SIZE)
+            if not chunk:
+                break
+
+            transfer_resp = requests.post(
+                f"https://graph.facebook.com/v19.0/{page_id}/videos",
+                data={
+                    "upload_phase": "transfer",
+                    "upload_session_id": session_id,
+                    "start_offset": offset,
+                    "access_token": page_token,
+                },
+                files={"video_file_chunk": chunk}
+            )
+            transfer_data = transfer_resp.json()
+            if "start_offset" not in transfer_data:
+                print(f"[Poster] Chunk upload failed: {transfer_data}")
+                return None
+
+            offset = int(transfer_data["start_offset"])
+            print(f"[Poster] Uploaded {offset}/{file_size} bytes")
+
+    # Step 3: Finish upload
+    finish_resp = requests.post(
+        f"https://graph.facebook.com/v19.0/{page_id}/videos",
+        data={
+            "upload_phase": "finish",
+            "upload_session_id": session_id,
+            "description": description,
+            "published": "true" if published else "false",
+            "access_token": page_token,
+        }
+    )
+    finish_data = finish_resp.json()
+    if not finish_data.get("success"):
+        print(f"[Poster] Failed to finish upload: {finish_data}")
+        return None
+
+    print(f"[Poster] Video uploaded successfully: {video_id}")
+    return video_id
+
+
 # ─── Instagram ────────────────────────────────────────────────────────────────
 
 def post_to_instagram(file_path: str, caption: str) -> bool:
@@ -61,20 +131,17 @@ def post_to_instagram(file_path: str, caption: str) -> bool:
             page_id = _get_env("FACEBOOK_PAGE_ID")
             page_token = get_page_token(user_token, page_id)
 
-            with open(file_path, "rb") as f:
-                upload = requests.post(
-                    f"{GRAPH_URL}/{page_id}/videos",
-                    data={"published": "false", "access_token": page_token},
-                    files={"source": f}
-                )
-            upload.raise_for_status()
-            fb_video_id = upload.json().get("id")
+            # Upload as unpublished to get video URL
+            video_id = upload_video_chunked(file_path, page_id, page_token, published=False)
+            if not video_id:
+                return False
 
+            # Get video source URL
             video_url = None
             for _ in range(10):
                 time.sleep(5)
                 video_info = requests.get(
-                    f"{GRAPH_URL}/{fb_video_id}",
+                    f"{GRAPH_URL}/{video_id}",
                     params={"fields": "source", "access_token": page_token}
                 ).json()
                 video_url = video_info.get("source")
@@ -157,12 +224,11 @@ def post_to_facebook(file_path: str, caption: str) -> bool:
         is_video = file_path.endswith(".mp4")
 
         if is_video:
-            with open(file_path, "rb") as f:
-                resp = requests.post(
-                    f"{GRAPH_URL}/{page_id}/videos",
-                    data={"description": caption, "access_token": page_token},
-                    files={"source": f},
-                )
+            video_id = upload_video_chunked(file_path, page_id, page_token, published=True, description=caption)
+            if not video_id:
+                return False
+            print(f"[Poster] Facebook video posted: {video_id}")
+            return True
         else:
             with open(file_path, "rb") as f:
                 resp = requests.post(
@@ -170,14 +236,12 @@ def post_to_facebook(file_path: str, caption: str) -> bool:
                     data={"caption": caption, "access_token": page_token},
                     files={"source": f},
                 )
-
-        data = resp.json()
-        if resp.status_code != 200:
-            print(f"[Poster] Facebook API error: {data}")
-            return False
-
-        print(f"[Poster] Facebook posted: {data.get('id')}")
-        return True
+            data = resp.json()
+            if resp.status_code != 200:
+                print(f"[Poster] Facebook API error: {data}")
+                return False
+            print(f"[Poster] Facebook posted: {data.get('id')}")
+            return True
 
     except Exception as e:
         print(f"[Poster] Facebook failed: {e}")
@@ -188,31 +252,24 @@ def post_to_facebook(file_path: str, caption: str) -> bool:
 
 def post_to_threads(file_path: str, caption: str) -> bool:
     try:
-        # Use dedicated Threads token
         threads_token = _get_env("THREADS_ACCESS_TOKEN")
         threads_id = _get_env("THREADS_ACCOUNT_ID")
         is_video = file_path.endswith(".mp4")
 
         if is_video:
-            # For videos use Facebook page to get public URL
             user_token = _get_env("META_ACCESS_TOKEN")
             page_id = _get_env("FACEBOOK_PAGE_ID")
             page_token = get_page_token(user_token, page_id)
 
-            with open(file_path, "rb") as f:
-                upload = requests.post(
-                    f"{GRAPH_URL}/{page_id}/videos",
-                    data={"published": "false", "access_token": page_token},
-                    files={"source": f}
-                )
-            upload.raise_for_status()
-            fb_video_id = upload.json().get("id")
+            video_id = upload_video_chunked(file_path, page_id, page_token, published=False)
+            if not video_id:
+                return False
 
             video_url = None
             for _ in range(10):
                 time.sleep(5)
                 video_info = requests.get(
-                    f"{GRAPH_URL}/{fb_video_id}",
+                    f"{GRAPH_URL}/{video_id}",
                     params={"fields": "source", "access_token": page_token}
                 ).json()
                 video_url = video_info.get("source")
