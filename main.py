@@ -21,11 +21,8 @@ def load_config() -> dict:
 
 
 def build_caption(post: dict, config: dict) -> str:
-    title = post.get("title", "")
     tags = config.get("caption_hashtags", ["#meme", "#funny", "#savagmemes"])
-    hashtags = " ".join(tags)
-    credit = "📸 via 9gag"
-    return f"{title}\n\n{hashtags}\n{credit}" if title else f"{hashtags}\n{credit}"
+    return " ".join(tags)
 
 
 def cleanup_file(path: str):
@@ -51,7 +48,6 @@ def run():
 
     print(f"[Bot] Sections: {sections} | Posts: {posts_per_run} | Platforms: {platforms}")
 
-    # 1. Fetch posts from all configured sections
     all_posts = []
     for section in sections:
         print(f"[Bot] Fetching section: {section}")
@@ -59,15 +55,12 @@ def run():
         all_posts.extend(posts)
         time.sleep(2)
 
-    # Sort all by upvotes
     all_posts.sort(key=lambda x: x["upvotes"], reverse=True)
 
-    # 2. Filter hate speech / blacklisted content
     print(f"[Bot] {len(all_posts)} posts fetched, filtering...")
     safe_posts = filter_posts(all_posts, config)
     print(f"[Bot] {len(safe_posts)} posts passed content filter")
 
-    # 3. Remove already-posted
     new_posts = filter_unposted(safe_posts)
     print(f"[Bot] {len(new_posts)} new posts available")
 
@@ -75,10 +68,8 @@ def run():
         print("[Bot] No new posts to share today. Exiting.")
         sys.exit(0)
 
-    # 4. Take top N posts for this run
     to_post = new_posts[:posts_per_run]
 
-    # 5. Download, post, cleanup
     posted_count = 0
     for post in to_post:
         print(f"\n[Bot] Processing: {post['title'][:60]} (👍 {post['upvotes']})")
@@ -91,17 +82,14 @@ def run():
         caption = build_caption(post, config)
         results = publish_post(file_path, caption, platforms)
 
-        # Mark as posted if at least one platform succeeded
         if any(results.values()):
             for platform, success in results.items():
                 if success:
                     mark_posted(post["id"], platform, post.get("title", ""))
             posted_count += 1
 
-        # Always clean up the file
         cleanup_file(file_path)
 
-        # Small delay between posts
         if posted_count < len(to_post):
             time.sleep(3)
 
