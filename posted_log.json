@@ -1,6 +1,7 @@
 {
   "posted_ids": [
-    "aZZ603V"
+    "aZZ603V",
+    "a0erpgZ"
   ],
   "history": [
     {
@@ -8,6 +9,12 @@
       "title": "It gets worse year by year",
       "platform": "facebook",
       "posted_at": "2026-05-20T15:22:51.627544"
+    },
+    {
+      "id": "a0erpgZ",
+      "title": "Worth a try",
+      "platform": "facebook",
+      "posted_at": "2026-05-20T16:17:04.037315"
     }
   ]
 }
