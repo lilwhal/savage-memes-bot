@@ -1,7 +1,7 @@
 {
   "bot_enabled": true,
 
-  "sections": ["funny", "meme"],
+  "sections": ["funny", "meme", "humor", "wtf", "awesome", "gaming", "cute"],
 
   "posts_per_run": 1,
 
@@ -23,9 +23,18 @@
   ],
 
   "blacklist_keywords": [
-    "Add your own",
-    "banned words here"
+    "9gag", "9GAG", "gag",
+    "blacktivities", "black culture", "ghetto",
+    "nigger", "nigga", "negro", "colored",
+    "chink", "spic", "kike", "gook", "wetback",
+    "towelhead", "raghead", "paki", "beaner",
+    "white power", "white supremacy", "kkk", "ku klux",
+    "nazi", "heil", "aryan",
+    "slavery", "plantation", "lynching",
+    "racial", "racist", "racism",
+    "stereotype", "segregation"
   ],
 
   "min_upvotes": 1000
 }
+
