@@ -1,4 +1,3 @@
-
 name: Savage Memes Bot
 
 on:
@@ -17,7 +16,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Refresh token (every run)
+      - name: Refresh token
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           META_APP_ID: ${{ secrets.META_APP_ID }}
@@ -31,6 +30,7 @@ jobs:
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
           FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           THREADS_ACCOUNT_ID: ${{ secrets.THREADS_ACCOUNT_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
         run: python main.py
       - run: |
