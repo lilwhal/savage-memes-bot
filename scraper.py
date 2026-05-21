@@ -25,11 +25,9 @@ HEADERS = {
     "Referer": "https://9gag.com/",
 }
 
-
 def fetch_posts(section: str, count: int = 30) -> list[dict]:
     tag = SECTION_TAGS.get(section.lower(), section.lower())
     url = f"https://9gag.com/v1/group-posts/group/{tag}/type/hot"
-
     posts = []
     after = None
 
@@ -77,13 +75,14 @@ def download_post(post: dict, download_dir: str) -> str | None:
     post_id = post["id"]
     images = post.get("images", {})
 
-    # Try video first
-    if post["type"] == "Animated":
+    # Try video first (Animated OR Video type)
+    if post["type"] in ("Animated", "Video"):
         video_url = (
             images.get("image460sv", {}).get("url")
+            or images.get("image460svwm", {}).get("url")
             or images.get("image460", {}).get("url")
         )
-        if video_url and video_url.endswith(".mp4"):
+        if video_url and ".mp4" in video_url:
             dest = os.path.join(download_dir, f"{post_id}.mp4")
             try:
                 r = requests.get(video_url, headers=HEADERS, timeout=30, stream=True)
