@@ -123,7 +123,7 @@ def upload_video_chunked(file_path: str, page_id: str, page_token: str, publishe
 
 def post_to_instagram(file_path: str, caption: str) -> bool:
     try:
-        user_token = _get_env("META_ACCESS_TOKEN")
+        user_token = _get_env("INSTAGRAM_ACCESS_TOKEN")
         ig_id = _get_env("INSTAGRAM_ACCOUNT_ID")
         is_video = file_path.endswith(".mp4")
 
