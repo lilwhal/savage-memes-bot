@@ -2,10 +2,8 @@
 9gag scraper - fetches top posts from configured sections
 """
 import requests
-import json
 import os
 import time
-import yt_dlp
 from pathlib import Path
 
 SECTION_TAGS = {
@@ -17,6 +15,8 @@ SECTION_TAGS = {
     "meme": "meme",
     "awesome": "awesome",
     "food": "food",
+    "humor": "humor",
+    "gif": "gif",
 }
 
 HEADERS = {
@@ -26,14 +26,13 @@ HEADERS = {
 }
 
 
-def fetch_posts(section: str, count: int = 20) -> list[dict]:
-    """Fetch top posts from a 9gag section via their internal API."""
+def fetch_posts(section: str, count: int = 30) -> list[dict]:
     tag = SECTION_TAGS.get(section.lower(), section.lower())
     url = f"https://9gag.com/v1/group-posts/group/{tag}/type/hot"
-    
+
     posts = []
     after = None
-    
+
     while len(posts) < count:
         params = {"itemCount": 10, "entryTypes": "animated,photo,video,article"}
         if after:
@@ -57,8 +56,10 @@ def fetch_posts(section: str, count: int = 20) -> list[dict]:
                 "title": item.get("title", ""),
                 "tags": [t.get("key", "") for t in item.get("tags", [])],
                 "upvotes": item.get("upVoteCount", 0),
+                "downvotes": item.get("downVoteCount", 0),
+                "comments": item.get("commentsCount", 0),
                 "section": section,
-                "type": item.get("type"),  # Photo or Animated
+                "type": item.get("type"),
                 "images": item.get("images", {}),
                 "url": f"https://9gag.com/gag/{item.get('id')}",
             })
@@ -68,18 +69,15 @@ def fetch_posts(section: str, count: int = 20) -> list[dict]:
             break
         time.sleep(1)
 
-    # Sort by upvotes descending
-    posts.sort(key=lambda x: x["upvotes"], reverse=True)
     return posts[:count]
 
 
 def download_post(post: dict, download_dir: str) -> str | None:
-    """Download image or video for a post. Returns local file path or None."""
     Path(download_dir).mkdir(parents=True, exist_ok=True)
     post_id = post["id"]
     images = post.get("images", {})
 
-    # Try video first (Animated = GIF/video)
+    # Try video first
     if post["type"] == "Animated":
         video_url = (
             images.get("image460sv", {}).get("url")
