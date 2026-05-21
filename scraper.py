@@ -1,23 +1,10 @@
 """
-9gag scraper - fetches top posts from configured sections
+9gag scraper - fetches top posts from configured tags
 """
 import requests
 import os
 import time
 from pathlib import Path
-
-SECTION_TAGS = {
-    "funny": "funny",
-    "wtf": "wtf",
-    "cute": "cute",
-    "gaming": "gaming",
-    "anime": "anime",
-    "meme": "meme",
-    "awesome": "awesome",
-    "food": "food",
-    "humor": "humor",
-    "gif": "gif",
-}
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -25,9 +12,8 @@ HEADERS = {
     "Referer": "https://9gag.com/",
 }
 
-def fetch_posts(section: str, count: int = 30) -> list[dict]:
-    tag = SECTION_TAGS.get(section.lower(), section.lower())
-    url = f"https://9gag.com/v1/group-posts/group/{tag}/type/hot"
+def fetch_posts(tag: str, count: int = 50) -> list[dict]:
+    url = f"https://9gag.com/v1/tag-posts/tag/{tag}/type/hot"
     posts = []
     after = None
 
@@ -41,7 +27,7 @@ def fetch_posts(section: str, count: int = 30) -> list[dict]:
             resp.raise_for_status()
             data = resp.json()
         except Exception as e:
-            print(f"[Scraper] Error fetching {section}: {e}")
+            print(f"[Scraper] Error fetching tag '{tag}': {e}")
             break
 
         items = data.get("data", {}).get("posts", [])
@@ -56,7 +42,7 @@ def fetch_posts(section: str, count: int = 30) -> list[dict]:
                 "upvotes": item.get("upVoteCount", 0),
                 "downvotes": item.get("downVoteCount", 0),
                 "comments": item.get("commentsCount", 0),
-                "section": section,
+                "section": tag,
                 "type": item.get("type"),
                 "images": item.get("images", {}),
                 "url": f"https://9gag.com/gag/{item.get('id')}",
