@@ -1,6 +1,5 @@
 """
 main.py - Savage Memes Bot entry point
-Reads config, scrapes 9gag, filters, downloads, posts, cleans up.
 """
 import json
 import os
@@ -50,7 +49,7 @@ def run():
 
     print(f"[Bot] Sections: {sections} | Posts: {posts_per_run} | Platforms: {platforms}")
 
-    # 1. Fetch posts from all configured sections
+    # 1. Fetch posts from all sections
     all_posts = []
     for section in sections:
         print(f"[Bot] Fetching section: {section}")
@@ -58,13 +57,16 @@ def run():
         all_posts.extend(posts)
         time.sleep(2)
 
-    # 2. Deduplicate posts that appear in multiple sections
+    # 2. Deduplicate across sections
     seen = set()
     all_posts = [p for p in all_posts if not (p["id"] in seen or seen.add(p["id"]))]
     print(f"[Bot] {len(all_posts)} unique posts after deduplication")
 
-    # 3. Sort by type (videos first) then upvotes
-    all_posts.sort(key=lambda x: (x["type"] == "Animated", x["upvotes"]), reverse=True)
+    # 3. Sort by videos first, then engagement score (upvotes + comments x10)
+    all_posts.sort(
+        key=lambda x: (x["type"] == "Animated", x["upvotes"] + (x.get("comments", 0) * 10)),
+        reverse=True
+    )
 
     # 4. Filter hate speech / blacklisted content
     print(f"[Bot] Filtering content...")
@@ -74,22 +76,30 @@ def run():
     # 5. Remove already-posted
     new_posts = filter_unposted(safe_posts)
 
-    # 6. Filter by minimum upvotes
-    min_upvotes = config.get("min_upvotes", 1000)
-    new_posts = [p for p in new_posts if p["upvotes"] >= min_upvotes]
-    print(f"[Bot] {len(new_posts)} new posts available above {min_upvotes} upvotes")
+    # 6. Filter by minimum upvotes with fallback
+    min_upvotes = config.get("min_upvotes", 500)
+    filtered = [p for p in new_posts if p["upvotes"] >= min_upvotes]
+
+    # Fallback: if nothing meets threshold, take top posts anyway
+    if not filtered and new_posts:
+        print(f"[Bot] No posts above {min_upvotes} upvotes, using top available posts")
+        filtered = new_posts
+
+    new_posts = filtered
+    print(f"[Bot] {len(new_posts)} new posts available")
 
     if not new_posts:
-        print("[Bot] No new posts to share today. Exiting.")
+        print("[Bot] No new posts to share. Exiting.")
         sys.exit(0)
 
-    # 7. Take top N posts for this run
+    # 7. Take top N posts
     to_post = new_posts[:posts_per_run]
 
     # 8. Download, post, cleanup
     posted_count = 0
     for post in to_post:
-        print(f"\n[Bot] Processing: {post['title'][:60]} (👍 {post['upvotes']})")
+        score = post["upvotes"] + (post.get("comments", 0) * 10)
+        print(f"\n[Bot] Processing: {post['title'][:60]} (👍 {post['upvotes']} 💬 {post.get('comments', 0)} Score: {score})")
 
         file_path = download_post(post, DOWNLOAD_DIR)
         if not file_path:
