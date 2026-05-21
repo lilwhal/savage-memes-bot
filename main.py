@@ -13,18 +13,15 @@ from poster import publish_post
 CONFIG_FILE = "config.json"
 DOWNLOAD_DIR = "tmp_media"
 
-
 def load_config() -> dict:
     with open(CONFIG_FILE, "r") as f:
         return json.load(f)
-
 
 def build_caption(post: dict, config: dict) -> str:
     title = post.get("title", "")
     tags = config.get("caption_hashtags", ["#meme", "#funny", "#savagmemes"])
     hashtags = " ".join(tags)
     return f"{title}\n\n{hashtags}" if title else hashtags
-
 
 def cleanup_file(path: str):
     try:
@@ -33,7 +30,6 @@ def cleanup_file(path: str):
             print(f"[Cleanup] Deleted {path}")
     except Exception as e:
         print(f"[Cleanup] Failed to delete {path}: {e}")
-
 
 def run():
     print("🤖 Savage Memes Bot starting...")
@@ -64,7 +60,7 @@ def run():
 
     # 3. Sort by videos first, then engagement score (upvotes + comments x10)
     all_posts.sort(
-        key=lambda x: (x["type"] == "Animated", x["upvotes"] + (x.get("comments", 0) * 10)),
+        key=lambda x: (x["type"] in ("Animated", "Video"), x["upvotes"] + (x.get("comments", 0) * 10)),
         reverse=True
     )
 
@@ -121,7 +117,6 @@ def run():
             time.sleep(3)
 
     print(f"\n✅ Done! Posted {posted_count}/{len(to_post)} posts.")
-
 
 if __name__ == "__main__":
     run()
