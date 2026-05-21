@@ -1,16 +1,26 @@
 {
   "bot_enabled": true,
-
-  "sections": ["funny", "meme", "humor", "wtf", "awesome", "gaming", "cute"],
-
+  "sections": [
+    "funny",
+    "meme",
+    "wtf",
+    "awesome",
+    "gaming",
+    "cute",
+    "humor",
+    "gif",
+    "old-man-puns",
+    "anime",
+    "satisfying",
+    "dark-humor",
+    "comedy"
+  ],
   "posts_per_run": 1,
-
   "platforms": {
     "instagram": true,
     "facebook": true,
     "threads": true
   },
-
   "caption_hashtags": [
     "#meme",
     "#funny",
@@ -21,7 +31,6 @@
     "#comedy",
     "#memesdaily"
   ],
-
   "blacklist_keywords": [
     "9gag", "9GAG",
     "blacktivities", "black culture", "ghetto",
@@ -34,6 +43,5 @@
     "racial", "racist", "racism",
     "stereotype", "segregation"
   ],
-
   "min_upvotes": 1000
 }
