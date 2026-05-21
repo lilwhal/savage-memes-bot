@@ -41,7 +41,8 @@ def run():
 
     sections = config.get("sections", ["funny"])
     posts_per_run = config.get("posts_per_run", 1)
-    platforms = config.get("platforms", ["instagram", "facebook", "threads"])
+    platforms_config = config.get("platforms", {})
+    platforms = [p for p, enabled in platforms_config.items() if enabled]
 
     print(f"[Bot] Sections: {sections} | Posts: {posts_per_run} | Platforms: {platforms}")
 
@@ -58,7 +59,7 @@ def run():
     all_posts = [p for p in all_posts if not (p["id"] in seen or seen.add(p["id"]))]
     print(f"[Bot] {len(all_posts)} unique posts after deduplication")
 
-    # 3. Sort by videos first, then engagement score (upvotes + comments x10)
+    # 3. Sort by videos first, then engagement score
     all_posts.sort(
         key=lambda x: (x["type"] in ("Animated", "Video"), x["upvotes"] + (x.get("comments", 0) * 10)),
         reverse=True
@@ -76,7 +77,6 @@ def run():
     min_upvotes = config.get("min_upvotes", 500)
     filtered = [p for p in new_posts if p["upvotes"] >= min_upvotes]
 
-    # Fallback: if nothing meets threshold, take top posts anyway
     if not filtered and new_posts:
         print(f"[Bot] No posts above {min_upvotes} upvotes, using top available posts")
         filtered = new_posts
