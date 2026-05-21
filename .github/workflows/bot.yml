@@ -36,7 +36,9 @@ jobs:
       - run: |
           git config user.name "savage-memes-bot"
           git config user.email "bot@savagmemes.com"
+          git stash
           git pull --rebase origin main
+          git stash pop
           git add posted_log.json
           git diff --staged --quiet || git commit -m "📝 Update post logs [skip ci]"
           git push
