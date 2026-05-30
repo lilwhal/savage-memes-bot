@@ -176,7 +176,8 @@
     "aByAbVz",
     "aoyvG2g",
     "a6Z0eNb",
-    "a5QOvEG"
+    "a5QOvEG",
+    "ajPzGD0"
   ],
   "history": [
     {
@@ -1240,6 +1241,12 @@
       "title": "Mamma mia!",
       "platform": "facebook",
       "posted_at": "2026-05-30T05:02:26.624422"
+    },
+    {
+      "id": "ajPzGD0",
+      "title": "This is not ai video",
+      "platform": "facebook",
+      "posted_at": "2026-05-30T07:02:38.688869"
     }
   ]
 }
