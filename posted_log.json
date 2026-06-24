@@ -506,15 +506,10 @@
     "a0eBo2v",
     "a9yo5AZ",
     "a9yo6BK",
-    "aRBnZvG"
+    "aRBnZvG",
+    "a9yovz1"
   ],
   "history": [
-    {
-      "id": "a6ZYAYL",
-      "title": "Isn't It True...?",
-      "platform": "facebook",
-      "posted_at": "2026-05-20T21:04:49.958358"
-    },
     {
       "id": "adBD2rQ",
       "title": "It's great, beautiful mechanics.",
@@ -3508,6 +3503,12 @@
       "title": "F\u00eate de la Musique",
       "platform": "facebook",
       "posted_at": "2026-06-24T19:29:28.266697"
+    },
+    {
+      "id": "a9yovz1",
+      "title": "Trying to cheat a self moving chessboard",
+      "platform": "facebook",
+      "posted_at": "2026-06-24T21:19:32.338374"
     }
   ]
 }
