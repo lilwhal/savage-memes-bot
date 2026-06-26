@@ -517,15 +517,10 @@
     "aW4zLdZ",
     "aAyjKod",
     "aE03oLe",
-    "aNDNB1r"
+    "aNDNB1r",
+    "ajPpxRp"
   ],
   "history": [
-    {
-      "id": "aZZ61EX",
-      "title": "Choose your pick",
-      "platform": "facebook",
-      "posted_at": "2026-05-21T15:36:13.121832"
-    },
     {
       "id": "aPAbbpG",
       "title": "No thanks",
@@ -3519,6 +3514,12 @@
       "title": "Global temperatures from 1880 to today",
       "platform": "facebook",
       "posted_at": "2026-06-26T07:45:25.282634"
+    },
+    {
+      "id": "ajPpxRp",
+      "title": "Smells like teen spirit",
+      "platform": "facebook",
+      "posted_at": "2026-06-26T10:46:50.068326"
     }
   ]
 }
