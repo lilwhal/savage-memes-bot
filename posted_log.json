@@ -624,15 +624,10 @@
     "aD2yEY9",
     "a2venBO",
     "aoyXB00",
-    "aO8wgOE"
+    "aO8wgOE",
+    "aD2ypNK"
   ],
   "history": [
-    {
-      "id": "aO8MpeM",
-      "title": "The customer is always right in matters of taste.",
-      "platform": "facebook",
-      "posted_at": "2026-05-26T17:02:34.056220"
-    },
     {
       "id": "azxW4Op",
       "title": "Can anyone from Texas confirm the portion sizes?",
@@ -3626,6 +3621,12 @@
       "title": "Street fight at outdoor mall",
       "platform": "facebook",
       "posted_at": "2026-07-08T22:59:04.406316"
+    },
+    {
+      "id": "aD2ypNK",
+      "title": "Be doesn't even know the moon is bigger than earth",
+      "platform": "facebook",
+      "posted_at": "2026-07-09T02:11:32.756715"
     }
   ]
 }
