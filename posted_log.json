@@ -678,15 +678,10 @@
     "aYQ2wMq",
     "adBmj09",
     "aXP59B2",
-    "a9y97Zj"
+    "a9y97Zj",
+    "avy3LRZ"
   ],
   "history": [
-    {
-      "id": "aByAjpz",
-      "title": "*Quack*",
-      "platform": "facebook",
-      "posted_at": "2026-05-30T09:02:23.108712"
-    },
     {
       "id": "avyM49E",
       "title": "Meeting a new friend",
@@ -3680,6 +3675,12 @@
       "title": "Normal day at office",
       "platform": "facebook",
       "posted_at": "2026-07-14T19:07:44.441644"
+    },
+    {
+      "id": "avy3LRZ",
+      "title": "I would love to show this to a medieval peasant. Half a day's work, done in seconds",
+      "platform": "facebook",
+      "posted_at": "2026-07-14T20:53:52.195187"
     }
   ]
 }
