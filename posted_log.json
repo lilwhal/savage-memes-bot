@@ -680,15 +680,10 @@
     "aXP59B2",
     "a9y97Zj",
     "avy3LRZ",
-    "aPAKG5w"
+    "aPAKG5w",
+    "aPAKDAV"
   ],
   "history": [
-    {
-      "id": "a7oYmDA",
-      "title": "Making bowling balls",
-      "platform": "facebook",
-      "posted_at": "2026-05-30T12:03:29.871188"
-    },
     {
       "id": "aGymr7n",
       "title": "Seems everybody hates AI now.",
@@ -3682,6 +3677,12 @@
       "title": "Whole",
       "platform": "facebook",
       "posted_at": "2026-07-14T22:51:48.349993"
+    },
+    {
+      "id": "aPAKDAV",
+      "title": "This 'Magic' Card Trick Is Actually Just Simple Math",
+      "platform": "facebook",
+      "posted_at": "2026-07-15T01:45:38.085749"
     }
   ]
 }
