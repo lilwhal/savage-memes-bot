@@ -683,15 +683,10 @@
     "aPAKG5w",
     "aPAKDAV",
     "aKGr341",
-    "aryjNW5"
+    "aryjNW5",
+    "a87B4qQ"
   ],
   "history": [
-    {
-      "id": "aO8MA7y",
-      "title": "Not again",
-      "platform": "facebook",
-      "posted_at": "2026-05-30T17:02:38.469375"
-    },
     {
       "id": "aND789r",
       "title": "RPG Battle Music",
@@ -3685,6 +3680,12 @@
       "title": "FAFO (Kurwa! Version)",
       "platform": "facebook",
       "posted_at": "2026-07-15T07:54:56.513084"
+    },
+    {
+      "id": "a87B4qQ",
+      "title": "Wealth!",
+      "platform": "facebook",
+      "posted_at": "2026-07-15T09:55:02.286773"
     }
   ]
 }
