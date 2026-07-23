@@ -766,15 +766,10 @@
     "aRBYrxq",
     "aKGrEGj",
     "a9y9q16",
-    "a7ozobe"
+    "a7ozobe",
+    "aKGrEX3"
   ],
   "history": [
-    {
-      "id": "aYQ32WO",
-      "title": "Once more into the fray, into the last good fight I'll ever know.",
-      "platform": "facebook",
-      "posted_at": "2026-06-05T11:53:02.767060"
-    },
     {
       "id": "ayNbGNr",
       "title": "Huggy bear",
@@ -3768,6 +3763,12 @@
       "title": "How it works vaccine.",
       "platform": "facebook",
       "posted_at": "2026-07-23T13:30:15.188699"
+    },
+    {
+      "id": "aKGrEX3",
+      "title": "Helen of Detroit",
+      "platform": "facebook",
+      "posted_at": "2026-07-23T15:50:39.222556"
     }
   ]
 }
