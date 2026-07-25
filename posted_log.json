@@ -786,15 +786,10 @@
     "aE0L6AG",
     "ayNO2zW",
     "aGyWnK0",
-    "amoE1K2"
+    "amoE1K2",
+    "azx0d8x"
   ],
   "history": [
-    {
-      "id": "a7oYjvr",
-      "title": "Found my future wife",
-      "platform": "facebook",
-      "posted_at": "2026-06-06T20:21:08.494039"
-    },
     {
       "id": "aD2KBgZ",
       "title": "American dream",
@@ -3788,6 +3783,12 @@
       "title": "I don't think she's in the mood for anything.",
       "platform": "facebook",
       "posted_at": "2026-07-25T11:04:28.649022"
+    },
+    {
+      "id": "azx0d8x",
+      "title": "Karma doesn't need pixels",
+      "platform": "facebook",
+      "posted_at": "2026-07-25T13:07:32.309692"
     }
   ]
 }
