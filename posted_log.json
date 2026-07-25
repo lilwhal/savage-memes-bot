@@ -782,15 +782,10 @@
     "axyXWEb",
     "agmPQXW",
     "a2vnMA9",
-    "a4PD65Z"
+    "a4PD65Z",
+    "aE0L6AG"
   ],
   "history": [
-    {
-      "id": "a1myzp2",
-      "title": "First a yellow card, then a selfie. Kaka is a nice guy.",
-      "platform": "facebook",
-      "posted_at": "2026-06-06T13:02:23.950778"
-    },
     {
       "id": "a9yxQYD",
       "title": "The horse is just saying \"stop horsing around\"",
@@ -3784,6 +3779,12 @@
       "title": "Can you dance better than this mom?",
       "platform": "facebook",
       "posted_at": "2026-07-25T01:58:44.484327"
+    },
+    {
+      "id": "aE0L6AG",
+      "title": "Happy Friday! Weekend, here we come!",
+      "platform": "facebook",
+      "posted_at": "2026-07-25T05:13:27.201269"
     }
   ]
 }
