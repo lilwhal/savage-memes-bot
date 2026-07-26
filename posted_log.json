@@ -794,15 +794,10 @@
     "a87BA63",
     "a1mGNOP",
     "an7LRb5",
-    "aXP5Ne2"
+    "aXP5Ne2",
+    "adBmOwd"
   ],
   "history": [
-    {
-      "id": "aByAD2A",
-      "title": "His face says it all",
-      "platform": "facebook",
-      "posted_at": "2026-06-07T09:53:43.406551"
-    },
     {
       "id": "aD2KB7d",
       "title": "They\u2019ll be back for you to fix the broken windows",
@@ -3796,6 +3791,12 @@
       "title": "Enjoy it!",
       "platform": "facebook",
       "posted_at": "2026-07-26T06:31:54.373927"
+    },
+    {
+      "id": "adBmOwd",
+      "title": "Totally unexpected",
+      "platform": "facebook",
+      "posted_at": "2026-07-26T09:53:24.697739"
     }
   ]
 }
