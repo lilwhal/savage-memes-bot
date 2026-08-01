@@ -858,15 +858,10 @@
     "aBy7o7N",
     "ae9vP8B",
     "awy6vGr",
-    "aMV3DwR"
+    "aMV3DwR",
+    "aryjdr5"
   ],
   "history": [
-    {
-      "id": "amo30nX",
-      "title": "There are two solutions",
-      "platform": "facebook",
-      "posted_at": "2026-06-11T23:02:37.702472"
-    },
     {
       "id": "axy5GYb",
       "title": "F**ks Around And Finds Out",
@@ -3860,6 +3855,12 @@
       "title": "Once a diamond, always a diamond.",
       "platform": "facebook",
       "posted_at": "2026-08-01T20:43:20.544393"
+    },
+    {
+      "id": "aryjdr5",
+      "title": "Not sure if Latest News or Movie Trailer",
+      "platform": "facebook",
+      "posted_at": "2026-08-01T22:47:35.534525"
     }
   ]
 }
