@@ -877,15 +877,10 @@
     "a87BvBZ",
     "a6ZAzM2",
     "aBy7jdP",
-    "aoybGW3"
+    "aoybGW3",
+    "a87B9GO"
   ],
   "history": [
-    {
-      "id": "azxnAdB",
-      "title": "Alien technology used to build the pyramids",
-      "platform": "facebook",
-      "posted_at": "2026-06-13T08:34:42.524278"
-    },
     {
       "id": "aZZepn6",
       "title": "For those who haven't seen it",
@@ -3879,6 +3874,12 @@
       "title": "It's 1993. You came back from school, you grab some to eat and turn on the TV. Your cartoons channel announces this show is coming next. You watch this intro, you're hooked... It's 1993, life was good.",
       "platform": "facebook",
       "posted_at": "2026-08-03T22:55:18.758664"
+    },
+    {
+      "id": "a87B9GO",
+      "title": "Hollywood your time is running out",
+      "platform": "facebook",
+      "posted_at": "2026-08-04T01:49:40.317606"
     }
   ]
 }
