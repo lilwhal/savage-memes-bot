@@ -905,15 +905,10 @@
     "aGyW3zZ",
     "aND6xOA",
     "aAyojN0",
-    "axyXxnn"
+    "axyXxnn",
+    "aO8XgW2"
   ],
   "history": [
-    {
-      "id": "aAyjdqZ",
-      "title": "Tom The Mime, absolute legend",
-      "platform": "facebook",
-      "posted_at": "2026-06-15T07:02:48.697405"
-    },
     {
       "id": "ae9LbXp",
       "title": "Etching the moment into history",
@@ -3907,6 +3902,12 @@
       "title": "With friends like these, who needs enemies\u2026..",
       "platform": "facebook",
       "posted_at": "2026-08-07T07:03:40.877586"
+    },
+    {
+      "id": "aO8XgW2",
+      "title": "Open Air Chopin Concerts in Warsaw.",
+      "platform": "facebook",
+      "posted_at": "2026-08-07T08:49:42.595868"
     }
   ]
 }
