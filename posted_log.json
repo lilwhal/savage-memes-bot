@@ -928,15 +928,10 @@
     "axyxdAb",
     "amojNwy",
     "apRyKQ8",
-    "aKG0w2b"
+    "aKG0w2b",
+    "azxNgKz"
   ],
   "history": [
-    {
-      "id": "aMVgjPA",
-      "title": "Welcome back from autopilot",
-      "platform": "facebook",
-      "posted_at": "2026-06-16T23:02:47.868523"
-    },
     {
       "id": "azxnXVb",
       "title": "Pigs",
@@ -3930,6 +3925,12 @@
       "title": "Sign me up",
       "platform": "facebook",
       "posted_at": "2026-08-09T04:58:09.252255"
+    },
+    {
+      "id": "azxNgKz",
+      "title": "New masterpiece is coming",
+      "platform": "facebook",
+      "posted_at": "2026-08-09T06:42:50.620483"
     }
   ]
 }
