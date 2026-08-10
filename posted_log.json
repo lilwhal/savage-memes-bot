@@ -942,15 +942,10 @@
     "aVvnQYM",
     "aVvnQdv",
     "aE0rGZo",
-    "a87PWZY"
+    "a87PWZY",
+    "aGy3Vpn"
   ],
   "history": [
-    {
-      "id": "aLnx0vP",
-      "title": "Green",
-      "platform": "facebook",
-      "posted_at": "2026-06-18T01:02:56.515898"
-    },
     {
       "id": "aqy0g1Y",
       "title": "How to draw shadows correctly",
@@ -3944,6 +3939,12 @@
       "title": "Now breed",
       "platform": "facebook",
       "posted_at": "2026-08-10T09:11:24.438616"
+    },
+    {
+      "id": "aGy3Vpn",
+      "title": "Phones",
+      "platform": "facebook",
+      "posted_at": "2026-08-10T11:01:38.932737"
     }
   ]
 }
