@@ -975,15 +975,10 @@
     "aYQ8wRx",
     "ajPbAAG",
     "aVvnen8",
-    "a9yQYzW"
+    "a9yQYzW",
+    "apRyrqM"
   ],
   "history": [
-    {
-      "id": "aZZe03W",
-      "title": "When you haven't seen your friend in a while",
-      "platform": "facebook",
-      "posted_at": "2026-06-20T01:02:46.741516"
-    },
     {
       "id": "a34mEO1",
       "title": "Moscow right now",
@@ -3977,6 +3972,12 @@
       "title": "Man vs woman island fun",
       "platform": "facebook",
       "posted_at": "2026-08-13T07:16:30.187977"
+    },
+    {
+      "id": "apRyrqM",
+      "title": "If you missed the solar eclipse, this is what it looked like:",
+      "platform": "facebook",
+      "posted_at": "2026-08-13T09:05:37.319485"
     }
   ]
 }
