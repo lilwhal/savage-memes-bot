@@ -1015,15 +1015,10 @@
     "a9yQpoo",
     "aXPDxrP",
     "avyY8EO",
-    "adBZLnZ"
+    "adBZLnZ",
+    "a7o43nz"
   ],
   "history": [
-    {
-      "id": "aE03oLe",
-      "title": "A perfect job",
-      "platform": "facebook",
-      "posted_at": "2026-06-26T02:39:36.129025"
-    },
     {
       "id": "aNDNB1r",
       "title": "Global temperatures from 1880 to today",
@@ -4017,6 +4012,12 @@
       "title": "I should watch archery",
       "platform": "facebook",
       "posted_at": "2026-08-16T14:16:04.176208"
+    },
+    {
+      "id": "a7o43nz",
+      "title": "\u201cI\u2019m surrounded by animals!\u201d",
+      "platform": "facebook",
+      "posted_at": "2026-08-16T16:16:15.472504"
     }
   ]
 }
