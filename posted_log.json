@@ -1059,15 +1059,10 @@
     "aXPDnGD",
     "aO8gxYE",
     "an7pzRL",
-    "aYQ8VEm"
+    "aYQ8VEm",
+    "azxNewz"
   ],
   "history": [
-    {
-      "id": "a7oQ6Om",
-      "title": "Dude shows exiting Tokyo",
-      "platform": "facebook",
-      "posted_at": "2026-07-01T12:29:52.534626"
-    },
     {
       "id": "aVvA9j2",
       "title": "Its always them.",
@@ -4061,6 +4056,12 @@
       "title": "New high score",
       "platform": "facebook",
       "posted_at": "2026-08-20T08:29:46.184856"
+    },
+    {
+      "id": "azxNewz",
+      "title": "He's a maniac, maniac on the floor",
+      "platform": "facebook",
+      "posted_at": "2026-08-20T10:23:00.784521"
     }
   ]
 }
