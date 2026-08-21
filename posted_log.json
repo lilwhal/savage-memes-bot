@@ -1077,15 +1077,10 @@
     "a349Gbv",
     "ae9o19W",
     "a9yQz1W",
-    "a4Pe6Y1"
+    "a4Pe6Y1",
+    "a6ZvXgN"
   ],
   "history": [
-    {
-      "id": "axy5KDb",
-      "title": "Go sports",
-      "platform": "facebook",
-      "posted_at": "2026-07-03T17:17:31.624561"
-    },
     {
       "id": "amo3Qpo",
       "title": "No lip reading necessary...",
@@ -4079,6 +4074,12 @@
       "title": "Good move",
       "platform": "facebook",
       "posted_at": "2026-08-21T20:17:56.985047"
+    },
+    {
+      "id": "a6ZvXgN",
+      "title": "Is this the new smoke detector?",
+      "platform": "facebook",
+      "posted_at": "2026-08-21T22:16:42.598536"
     }
   ]
 }
