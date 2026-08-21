@@ -1076,15 +1076,10 @@
     "aqy3X9Z",
     "a349Gbv",
     "ae9o19W",
-    "a9yQz1W"
+    "a9yQz1W",
+    "a4Pe6Y1"
   ],
   "history": [
-    {
-      "id": "abA7o49",
-      "title": "D-Day",
-      "platform": "facebook",
-      "posted_at": "2026-07-03T15:51:16.929536"
-    },
     {
       "id": "axy5KDb",
       "title": "Go sports",
@@ -4078,6 +4073,12 @@
       "title": "The Slingzooka",
       "platform": "facebook",
       "posted_at": "2026-08-21T18:26:31.143211"
+    },
+    {
+      "id": "a4Pe6Y1",
+      "title": "Good move",
+      "platform": "facebook",
+      "posted_at": "2026-08-21T20:17:56.985047"
     }
   ]
 }
