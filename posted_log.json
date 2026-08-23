@@ -1096,15 +1096,10 @@
     "a87P0nO",
     "aW4KnZd",
     "aByqPn1",
-    "a1mz5KP"
+    "a1mz5KP",
+    "aAyW4x9"
   ],
   "history": [
-    {
-      "id": "a34mO5N",
-      "title": "Would you be comfortable using this technology, or is it too invasive from a privacy standpoint?",
-      "platform": "facebook",
-      "posted_at": "2026-07-05T19:06:11.572103"
-    },
     {
       "id": "apROM4n",
       "title": "You can choose 2 plans, there is a plan for everyone, choose carefully and be happy forever",
@@ -4098,6 +4093,12 @@
       "title": "Kirov Reporting, just chills",
       "platform": "facebook",
       "posted_at": "2026-08-23T10:16:51.096635"
+    },
+    {
+      "id": "aAyW4x9",
+      "title": "Now I can die peacefully",
+      "platform": "facebook",
+      "posted_at": "2026-08-23T12:23:48.782057"
     }
   ]
 }
