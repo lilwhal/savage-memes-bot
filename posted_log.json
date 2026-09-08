@@ -1197,15 +1197,10 @@
     "azxN6bb",
     "aqy33OZ",
     "aPANNRg",
-    "aE0rrBx"
+    "aE0rrBx",
+    "ajPb2bg"
   ],
   "history": [
-    {
-      "id": "a34Vq3v",
-      "title": "Nothing like old animes !",
-      "platform": "facebook",
-      "posted_at": "2026-07-16T17:08:00.229843"
-    },
     {
       "id": "aMV39DW",
       "title": "Tech is a boon when it makes life easier",
@@ -4199,6 +4194,12 @@
       "title": "Haircut for happy dog",
       "platform": "facebook",
       "posted_at": "2026-09-07T22:26:42.593207"
+    },
+    {
+      "id": "ajPb2bg",
+      "title": "Crossing the street in Sarajevo 1994",
+      "platform": "facebook",
+      "posted_at": "2026-09-08T02:21:25.662858"
     }
   ]
 }
