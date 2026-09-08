@@ -1201,15 +1201,10 @@
     "ajPb2bg",
     "aMVRpRA",
     "aO86oWv",
-    "a9y3jYL"
+    "a9y3jYL",
+    "a7ojvMx"
   ],
   "history": [
-    {
-      "id": "a4PDb0m",
-      "title": "WTF",
-      "platform": "facebook",
-      "posted_at": "2026-07-17T01:58:52.124075"
-    },
     {
       "id": "ae9vbXO",
       "title": "Fact",
@@ -4203,6 +4198,12 @@
       "title": "My stick's better than yours!",
       "platform": "facebook",
       "posted_at": "2026-09-08T19:11:10.977850"
+    },
+    {
+      "id": "a7ojvMx",
+      "title": "Never saw this breed that calm.",
+      "platform": "facebook",
+      "posted_at": "2026-09-08T22:14:39.099065"
     }
   ]
 }
