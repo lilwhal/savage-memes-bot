@@ -1203,15 +1203,10 @@
     "aO86oWv",
     "a9y3jYL",
     "a7ojvMx",
-    "a9y3dWZ"
+    "a9y3dWZ",
+    "a87rLWZ"
   ],
   "history": [
-    {
-      "id": "aQz0eqW",
-      "title": "...",
-      "platform": "facebook",
-      "posted_at": "2026-07-17T07:57:03.930544"
-    },
     {
       "id": "a0e2b0Q",
       "title": "Still would?",
@@ -4205,6 +4200,12 @@
       "title": "Inflation is hell of a drug",
       "platform": "facebook",
       "posted_at": "2026-09-09T02:24:19.375940"
+    },
+    {
+      "id": "a87rLWZ",
+      "title": "Dude always looks happy",
+      "platform": "facebook",
+      "posted_at": "2026-09-09T08:31:55.238389"
     }
   ]
 }
