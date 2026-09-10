@@ -1207,15 +1207,10 @@
     "a87rLWZ",
     "adB3Nj9",
     "a34oY1Q",
-    "azx6bBx"
+    "azx6bBx",
+    "a7oj5xe"
   ],
   "history": [
-    {
-      "id": "abA9zGv",
-      "title": "Ghost in the shell",
-      "platform": "facebook",
-      "posted_at": "2026-07-17T15:08:54.439239"
-    },
     {
       "id": "a0e25ZB",
       "title": "People mention their favorite Scottish moments. Simply gold",
@@ -4209,6 +4204,12 @@
       "title": "These are the kind of the people that were on the jury, and listen to the things they are saying",
       "platform": "facebook",
       "posted_at": "2026-09-09T22:09:39.943108"
+    },
+    {
+      "id": "a7oj5xe",
+      "title": "The remaster we could have had.",
+      "platform": "facebook",
+      "posted_at": "2026-09-10T02:23:47.912039"
     }
   ]
 }
