@@ -1228,15 +1228,10 @@
     "aO86mdy",
     "aPAOGmR",
     "aoyBpVm",
-    "aNDyn0A"
+    "aNDyn0A",
+    "adB3XA9"
   ],
   "history": [
-    {
-      "id": "aND6004",
-      "title": "Classic",
-      "platform": "facebook",
-      "posted_at": "2026-07-19T14:49:47.248907"
-    },
     {
       "id": "a5Q8RDG",
       "title": "Bait'n'bite",
@@ -4230,6 +4225,12 @@
       "title": "A typical day for a Balkan guy",
       "platform": "facebook",
       "posted_at": "2026-09-13T08:41:34.535966"
+    },
+    {
+      "id": "adB3XA9",
+      "title": "True",
+      "platform": "facebook",
+      "posted_at": "2026-09-13T14:01:33.460612"
     }
   ]
 }
