@@ -1252,15 +1252,10 @@
     "aYQz702",
     "aZZ9ypp",
     "azx696B",
-    "aByDgLZ"
+    "aByDgLZ",
+    "a6ZWNRR"
   ],
   "history": [
-    {
-      "id": "aPAK3vR",
-      "title": "It should have been me!",
-      "platform": "facebook",
-      "posted_at": "2026-07-22T01:55:43.041009"
-    },
     {
       "id": "an7L46b",
       "title": "One more second and he might have different answer",
@@ -4254,6 +4249,12 @@
       "title": "She's left with nothing",
       "platform": "facebook",
       "posted_at": "2026-09-17T22:35:15.301476"
+    },
+    {
+      "id": "a6ZWNRR",
+      "title": "Happened in Krakow, Poland (03:59)",
+      "platform": "facebook",
+      "posted_at": "2026-09-18T02:30:56.909718"
     }
   ]
 }
