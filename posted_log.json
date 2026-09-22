@@ -1278,15 +1278,10 @@
     "aYQzG8w",
     "aW4V7zZ",
     "aqyvRpM",
-    "a5QLBxG"
+    "a5QLBxG",
+    "abAjezX"
   ],
   "history": [
-    {
-      "id": "axyXWEb",
-      "title": "Clark Kent discovering his heat vision after meeting the new biology teacher",
-      "platform": "facebook",
-      "posted_at": "2026-07-24T19:16:14.624106"
-    },
     {
       "id": "agmPQXW",
       "title": "It is easier to destroy than to create",
@@ -4280,6 +4275,12 @@
       "title": "Yummy",
       "platform": "facebook",
       "posted_at": "2026-09-22T13:00:04.727084"
+    },
+    {
+      "id": "abAjezX",
+      "title": "Bus Driver in Dortmund, Germany",
+      "platform": "facebook",
+      "posted_at": "2026-09-22T17:52:03.842944"
     }
   ]
 }
