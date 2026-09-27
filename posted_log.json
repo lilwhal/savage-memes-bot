@@ -1302,15 +1302,10 @@
     "aQzYOLr",
     "agmR4d1",
     "aVvG2NK",
-    "axypYQM"
+    "axypYQM",
+    "ae9X2qm"
   ],
   "history": [
-    {
-      "id": "aVvNEG2",
-      "title": "Let's face the truth",
-      "platform": "facebook",
-      "posted_at": "2026-07-27T02:10:33.072463"
-    },
     {
       "id": "aRBYMNA",
       "title": "How to outsmart a genie",
@@ -4304,6 +4299,12 @@
       "title": "I just realized my mom raised me as a Shaolin monk",
       "platform": "facebook",
       "posted_at": "2026-09-27T00:06:23.593662"
+    },
+    {
+      "id": "ae9X2qm",
+      "title": "Cute cat",
+      "platform": "facebook",
+      "posted_at": "2026-09-27T07:25:40.167823"
     }
   ]
 }
