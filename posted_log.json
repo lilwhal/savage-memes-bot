@@ -1317,15 +1317,10 @@
     "apRedgE",
     "aYQzvwm",
     "aGyP6p5",
-    "aO86NAr"
+    "aO86NAr",
+    "a7oj6jw"
   ],
   "history": [
-    {
-      "id": "ae9vVZv",
-      "title": "My cat at 3 a.m for no reason",
-      "platform": "facebook",
-      "posted_at": "2026-07-28T19:12:52.424931"
-    },
     {
       "id": "aGyW2nZ",
       "title": "Unexpected",
@@ -4319,6 +4314,12 @@
       "title": "For my next trick, I'll saw myself in half!",
       "platform": "facebook",
       "posted_at": "2026-09-30T20:27:21.631099"
+    },
+    {
+      "id": "a7oj6jw",
+      "title": "Same music in different styles.",
+      "platform": "facebook",
+      "posted_at": "2026-10-01T00:58:39.562148"
     }
   ]
 }
