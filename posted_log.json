@@ -1342,15 +1342,10 @@
     "adB3GjM",
     "apRe4qM",
     "azx6n0q",
-    "aGyP39w"
+    "aGyP39w",
+    "a4PMDV6"
   ],
   "history": [
-    {
-      "id": "a6ZA8Vq",
-      "title": "This is your reminder that Ryan Gosling has to beat this",
-      "platform": "facebook",
-      "posted_at": "2026-07-31T10:31:29.489579"
-    },
     {
       "id": "aXP5e4b",
       "title": "A lesson on how to be a proper gentleman",
@@ -4344,6 +4339,12 @@
       "title": "Stuck in BC times",
       "platform": "facebook",
       "posted_at": "2026-10-06T22:05:48.376839"
+    },
+    {
+      "id": "a4PMDV6",
+      "title": "Whoop",
+      "platform": "facebook",
+      "posted_at": "2026-10-07T03:35:03.080237"
     }
   ]
 }
