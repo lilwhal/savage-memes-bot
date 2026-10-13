@@ -1365,15 +1365,10 @@
     "a6DryV9",
     "a78vyqL",
     "abe3yAb",
-    "ap1KvBp"
+    "ap1KvBp",
+    "aBZ9YeA"
   ],
   "history": [
-    {
-      "id": "a4PDmMv",
-      "title": "Holy Schnitzels",
-      "platform": "facebook",
-      "posted_at": "2026-08-02T16:52:41.273052"
-    },
     {
       "id": "aND68O4",
       "title": "When you're having a bad day, just think of Paco.",
@@ -4367,6 +4362,12 @@
       "title": "How gaming feels nowadays",
       "platform": "facebook",
       "posted_at": "2026-10-13T01:46:03.486638"
+    },
+    {
+      "id": "aBZ9YeA",
+      "title": "McAfee collapse",
+      "platform": "facebook",
+      "posted_at": "2026-10-13T08:48:04.171708"
     }
   ]
 }
