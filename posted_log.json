@@ -1381,15 +1381,10 @@
     "anOeMNz",
     "aRL6jqM",
     "a8Ad3dO",
-    "awgNXBr"
+    "awgNXBr",
+    "a5VpMjO"
   ],
   "history": [
-    {
-      "id": "a7ozxrq",
-      "title": "Yup",
-      "platform": "facebook",
-      "posted_at": "2026-08-04T14:11:13.812859"
-    },
     {
       "id": "a7ozxDq",
       "title": "Chickens for KFC",
@@ -4383,6 +4378,12 @@
       "title": "Middle Eastern hosts",
       "platform": "facebook",
       "posted_at": "2026-10-16T14:27:09.762149"
+    },
+    {
+      "id": "a5VpMjO",
+      "title": "Now you seen everything. Angry Canadian.",
+      "platform": "facebook",
+      "posted_at": "2026-10-16T19:10:45.673029"
     }
   ]
 }
