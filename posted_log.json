@@ -1384,15 +1384,10 @@
     "awgNXBr",
     "a5VpMjO",
     "advyKdN",
-    "aXLZvBd"
+    "aXLZvBd",
+    "aGLKZBn"
   ],
   "history": [
-    {
-      "id": "aXP5O3d",
-      "title": "Hail Lord Gaben",
-      "platform": "facebook",
-      "posted_at": "2026-08-04T21:04:53.618946"
-    },
     {
       "id": "a34VOgN",
       "title": "Got some side quests to do.",
@@ -4386,6 +4381,12 @@
       "title": "I should go there",
       "platform": "facebook",
       "posted_at": "2026-10-17T02:24:03.677436"
+    },
+    {
+      "id": "aGLKZBn",
+      "title": "A beautiful castle in Romania",
+      "platform": "facebook",
+      "posted_at": "2026-10-17T08:10:59.684444"
     }
   ]
 }
