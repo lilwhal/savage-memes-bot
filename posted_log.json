@@ -1407,15 +1407,10 @@
     "a8Ad7Q3",
     "aoWmKD0",
     "aD7RYYG",
-    "aBZ9dBD"
+    "aBZ9dBD",
+    "a6DrZgq"
   ],
   "history": [
-    {
-      "id": "aAyoW7g",
-      "title": "Looks do-able",
-      "platform": "facebook",
-      "posted_at": "2026-08-07T12:45:34.466181"
-    },
     {
       "id": "aBy7AMP",
       "title": "The kitten yawns",
@@ -4409,6 +4404,12 @@
       "title": "Rejection..",
       "platform": "facebook",
       "posted_at": "2026-10-21T09:02:14.894967"
+    },
+    {
+      "id": "a6DrZgq",
+      "title": "Community guidelines and traditions",
+      "platform": "facebook",
+      "posted_at": "2026-10-21T14:48:23.146998"
     }
   ]
 }
