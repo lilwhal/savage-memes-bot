@@ -1415,15 +1415,10 @@
     "ayqE6Nq",
     "aPx6PPB",
     "aNLmvBr",
-    "aoWm3q2"
+    "aoWm3q2",
+    "ae4KZ15"
   ],
   "history": [
-    {
-      "id": "aPAN6yQ",
-      "title": "Szczebrzeszyn",
-      "platform": "facebook",
-      "posted_at": "2026-08-08T04:49:16.848550"
-    },
     {
       "id": "ae9voEW",
       "title": "God is black",
@@ -4417,6 +4412,12 @@
       "title": "The Selflove modern",
       "platform": "facebook",
       "posted_at": "2026-10-22T22:55:12.202495"
+    },
+    {
+      "id": "ae4KZ15",
+      "title": "Professionals have standards",
+      "platform": "facebook",
+      "posted_at": "2026-10-23T02:47:17.613981"
     }
   ]
 }
