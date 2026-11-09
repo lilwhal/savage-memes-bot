@@ -1486,15 +1486,10 @@
     "aWpQZ5Z",
     "aNLroYb",
     "aBZR31z",
-    "aXL0EYd"
+    "aXL0EYd",
+    "ap1EoyB"
   ],
   "history": [
-    {
-      "id": "aZZABW6",
-      "title": "Educated",
-      "platform": "facebook",
-      "posted_at": "2026-08-14T07:14:07.105471"
-    },
     {
       "id": "aXPDqvv",
       "title": "Average cook British show",
@@ -4488,6 +4483,12 @@
       "title": "Living Conditions in Mumbai - India",
       "platform": "facebook",
       "posted_at": "2026-11-09T01:21:06.430442"
+    },
+    {
+      "id": "ap1EoyB",
+      "title": "The tail-wagging speed never diminished!",
+      "platform": "facebook",
+      "posted_at": "2026-11-09T08:55:49.405245"
     }
   ]
 }
