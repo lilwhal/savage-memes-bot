@@ -1497,15 +1497,10 @@
     "aRLweLq",
     "aXL0wBv",
     "aPxwDRg",
-    "arWvNx5"
+    "arWvNx5",
+    "aoWEOjn"
   ],
   "history": [
-    {
-      "id": "aqy31ZR",
-      "title": "Title",
-      "platform": "facebook",
-      "posted_at": "2026-08-15T04:22:57.033211"
-    },
     {
       "id": "aW4KqVx",
       "title": "Sound on",
@@ -4499,6 +4494,12 @@
       "title": "\"Cmon you can do it man... Cmon, just like this\"",
       "platform": "facebook",
       "posted_at": "2026-11-12T14:24:47.798043"
+    },
+    {
+      "id": "aoWEOjn",
+      "title": "\"If she's a 10, you are an asset\".",
+      "platform": "facebook",
+      "posted_at": "2026-11-12T22:00:29.072475"
     }
   ]
 }
