@@ -1512,15 +1512,10 @@
     "a8AL5OQ",
     "aZnb7rX",
     "aK1w7GQ",
-    "a6DmEnN"
+    "a6DmEnN",
+    "a4nKEEd"
   ],
   "history": [
-    {
-      "id": "aXPDxrP",
-      "title": "My brother in Christ, eat a banana or drink a Gatorade",
-      "platform": "facebook",
-      "posted_at": "2026-08-16T10:16:46.683233"
-    },
     {
       "id": "avyY8EO",
       "title": "Glass Ball vs Bullets",
@@ -4514,6 +4509,12 @@
       "title": "No 3D engine, no polygons, 32 KB of code.",
       "platform": "facebook",
       "posted_at": "2026-11-16T23:57:05.114182"
+    },
+    {
+      "id": "a4nKEEd",
+      "title": "She deserved more karma",
+      "platform": "facebook",
+      "posted_at": "2026-11-17T05:57:27.885847"
     }
   ]
 }
