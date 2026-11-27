@@ -1542,15 +1542,10 @@
     "aD7AQW9",
     "a17vw5D",
     "aMd2W86",
-    "ayq7PdX"
+    "ayq7PdX",
+    "aoWEdq2"
   ],
   "history": [
-    {
-      "id": "aMVRx7V",
-      "title": "Perfection in every snip",
-      "platform": "facebook",
-      "posted_at": "2026-08-19T00:46:56.901206"
-    },
     {
       "id": "aoyrP33",
       "title": "Art",
@@ -4544,6 +4539,12 @@
       "title": "Interesting reaction",
       "platform": "facebook",
       "posted_at": "2026-11-27T06:01:53.379746"
+    },
+    {
+      "id": "aoWEdq2",
+      "title": "Exercise in Japan",
+      "platform": "facebook",
+      "posted_at": "2026-11-27T17:46:33.818669"
     }
   ]
 }
